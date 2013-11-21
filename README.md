@@ -6,6 +6,7 @@
 
 [![build](https://secure.travis-ci.org/salsita/grunt-userev.png?branch=master)](https://travis-ci.org/salsita/grunt-userev) [![npm version](https://badge.fury.io/js/grunt-userev.png)](https://npmjs.org/package/grunt-userev) [![dependencies](https://david-dm.org/salsita/grunt-userev.png)](https://david-dm.org/salsita/grunt-userev) [![dev-dependencies](https://david-dm.org/salsita/grunt-userev/dev-status.png)](https://david-dm.org/salsita/grunt-userev#info=devDependencies)
 
+
 ## Getting Started
 
 This plugin requires [Grunt](http://gruntjs.com).
@@ -94,12 +95,6 @@ Default: none
 If specified, the RegExp pattern is matched against matched references and the first matched group (the hash in filename) is removed. This allows to update the references in source files multiple times without need to regenerate them.
 
 
-## Roadmap
-
-- Add changelog
-- Extend tests
-
-
 ## Contributing
 
 Welcome to the project. Choose a way that suits you. You'll need a [GitHub account](https://github.com/signup/free).
@@ -117,8 +112,33 @@ Welcome to the project. Choose a way that suits you. You'll need a [GitHub accou
 * For a bugfix, write a test that exposes the bug and fails before applying your fix. Submit the test alongside the fix.
 * For a new feature, add tests that cover the feature.
 * Lint and test your code by running `grunt`, or `grunt watch` to watch source files and run tests on any change.
-* Use commit messages suitable for generating [changelog](https://github.com/salsita/grunt-userev/blob/master/CHANGELOG.md) and following [Karma/Angular commit message convention](https://github.com/karma-runner/karma/blob/master/docs/dev/04-git-commit-msg.md) ([docs](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)). In short, use `<type>(<scope>): <subject>` header in imperative present tense, message body describing motivation/differences, and footer referencing related issues and breaking changes.
+* Use commit messages suitable for generating [changelog](#changelog) and following [Karma/Angular commit message convention](https://github.com/karma-runner/karma/blob/master/docs/dev/04-git-commit-msg.md) ([docs](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)). In short, use `<type>(<scope>): <subject>` header in imperative present tense, message body describing motivation/differences, and footer referencing related issues and breaking changes.
 * [Create a pull request](https://github.com/salsita/grunt-userev/compare) ([help](https://help.github.com/articles/creating-a-pull-request)) to [grunt-userev](https://github.com/salsita/grunt-userev) [master](https://github.com/salsita/grunt-userev/branches) branch.
+
+
+## Roadmap
+
+- Add tests
+
+
+<a name="changelog"></a>
+## Changelog
+
+<a name="v0.0.2"></a>
+### v0.0.2 (2013-11-21)
+
+
+#### Features
+
+* **changelog:** add [changelog](https://github.com/salsita/grunt-userev/blob/master/CHANGELOG.md) ([dbc03212](https://github.com/salsita/grunt-userev/commit/dbc03212dbde2668861b2d8f9fa969eb2f7ddf86))
+
+<a name="v0.0.1"></a>
+### v0.0.1 (2013-11-21)
+
+
+#### Features
+
+* **task:** create grunt userev task ([d9f515c4](https://github.com/salsita/grunt-userev/commit/d9f515c4b74c980231f006dfdaaf4727ccd42aae))
 
 
 ## License

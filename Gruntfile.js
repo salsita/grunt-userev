@@ -17,6 +17,23 @@ module.exports = function (grunt) {
     // Read package info.
     pkg: grunt.file.readJSON('package.json'),
 
+    // Concatenate README.md.
+    concat: {
+      readme: {
+        src: [
+          'docs/about.md',
+          'docs/getting-started.md',
+          'docs/overview.md',
+          'docs/options.md',
+          'docs/contributing.md',
+          'docs/roadmap.md',
+          'CHANGELOG.md',
+          'LICENSE.md',
+        ],
+        dest: 'README.md',
+      },
+    },
+
     // Lint sources.
     jshint: {
       all: [
@@ -50,6 +67,11 @@ module.exports = function (grunt) {
         files: ['.jshintrc'],
         tasks: ['jshint'],
       },
+      readme: {
+        files: ['docs/**.md', 'LICENSE.md', 'CHANGELOG.md'],
+        tasks: ['concat:readme'],
+      },
+
     },
   });
 
@@ -57,7 +79,7 @@ module.exports = function (grunt) {
   grunt.loadTasks('tasks');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask('default', ['jshint', 'test', 'concat']);
 
   // On watch, run both default and delta (original watch).
   grunt.renameTask('watch', 'delta');
