@@ -1,0 +1,40 @@
+{
+  "name": "grunt-userev",
+  "version": "0.0.1",
+  "description": "Update references to assets versioned with grunt-filerev. Leaner and faster than grunt-usemin, and able to update already versioned references.",
+  "homepage": "https://github.com/salsita/grunt-userev",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/salsita/grunt-userev.git"
+  },
+  "bugs": "https://github.com/salsita/grunt-userev/issues",
+  "author": {
+    "name": "Salsita Software",
+    "email": "",
+    "url": "http://www.salsitasoft.com/"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "jshint-stylish": "~0.1.3",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt": "~0.4.0rc2"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
