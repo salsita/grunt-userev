@@ -4,7 +4,9 @@
 
 #### Features
 
-* **changelog:** add [changelog](https://github.com/salsita/grunt-userev/blob/master/CHANGELOG.md) ([dbc03212](https://github.com/salsita/grunt-userev/commit/dbc03212dbde2668861b2d8f9fa969eb2f7ddf86))
+* **changelog:**
+  * add changelog to README ([0c70f8d2](https://github.com/salsita/grunt-userev/commit/0c70f8d2569534215575dfef037936018d26a70e))
+  * add changelog ([3617bb0a](https://github.com/salsita/grunt-userev/commit/3617bb0af7bb733857cc3fdf391bb20a92631df7))
 
 <a name="v0.0.1"></a>
 ### v0.0.1 (2013-11-21)

@@ -1,10 +1,8 @@
 # grunt-userev <a href='https://github.com/salsita'><img align='right' title='Salsita' src='https://www.google.com/a/cpanel/salsitasoft.com/images/logo.gif?alpha=1' _src='https://1.gravatar.com/avatar/d413290a5fe1385efcf5a344d4a0b588?s=50' /></a>
 
-<a href='https://npmjs.org/package/grunt-userev'><img align='right' alt='npm' title='npm info' src='https://nodei.co/npm/grunt-userev.png?compact=true' /></a>
-
 > Update references to assets versioned with [grunt-filerev](https://github.com/yeoman/grunt-filerev). Leaner and faster than [grunt-usemin](https://github.com/yeoman/grunt-usemin), and able to update already versioned references.
 
-[![build](https://secure.travis-ci.org/salsita/grunt-userev.png?branch=master)](https://travis-ci.org/salsita/grunt-userev) [![npm version](https://badge.fury.io/js/grunt-userev.png)](https://npmjs.org/package/grunt-userev) [![dependencies](https://david-dm.org/salsita/grunt-userev.png)](https://david-dm.org/salsita/grunt-userev) [![dev-dependencies](https://david-dm.org/salsita/grunt-userev/dev-status.png)](https://david-dm.org/salsita/grunt-userev#info=devDependencies)
+<a href='https://npmjs.org/package/grunt-userev'><img align='left' alt='npm' title='npm info' src='https://nodei.co/npm/grunt-userev.png?compact=true' /></a>&nbsp;[![build](https://secure.travis-ci.org/salsita/grunt-userev.png?branch=master)](https://travis-ci.org/salsita/grunt-userev) [![npm version](https://badge.fury.io/js/grunt-userev.png)](https://npmjs.org/package/grunt-userev) [![dependencies](https://david-dm.org/salsita/grunt-userev.png)](https://david-dm.org/salsita/grunt-userev) [![dev-dependencies](https://david-dm.org/salsita/grunt-userev/dev-status.png)](https://david-dm.org/salsita/grunt-userev#info=devDependencies)
 
 
 ## Getting Started
@@ -130,7 +128,9 @@ Welcome to the project. Choose a way that suits you. You'll need a [GitHub accou
 
 #### Features
 
-* **changelog:** add [changelog](https://github.com/salsita/grunt-userev/blob/master/CHANGELOG.md) ([dbc03212](https://github.com/salsita/grunt-userev/commit/dbc03212dbde2668861b2d8f9fa969eb2f7ddf86))
+* **changelog:**
+  * add changelog to README ([0c70f8d2](https://github.com/salsita/grunt-userev/commit/0c70f8d2569534215575dfef037936018d26a70e))
+  * add changelog ([3617bb0a](https://github.com/salsita/grunt-userev/commit/3617bb0af7bb733857cc3fdf391bb20a92631df7))
 
 <a name="v0.0.1"></a>
 ### v0.0.1 (2013-11-21)
