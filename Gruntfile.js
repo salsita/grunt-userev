@@ -14,6 +14,10 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    // Read package info.
+    pkg: grunt.file.readJSON('package.json'),
+
+    // Lint sources.
     jshint: {
       all: [
         'Gruntfile.js',
