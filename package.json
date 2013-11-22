@@ -11,10 +11,11 @@
   "author": {
     "name": "Salsita Software",
     "email": "",
-    "url": "http://www.salsitasoft.com/"
+    "url": "https://github.com/salsita"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "optimize", "minify", "rev", "version", "versioning",
+    "html", "css", "assets"
   ],
   "main": "Gruntfile.js",
   "engines": {
