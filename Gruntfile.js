@@ -1,6 +1,6 @@
 /*
- * grunt-runtask
- * https://github.com/salsita/grunt-runtask
+ * grunt-userev
+ * https://github.com/salsita/grunt-userev
  *
  * Copyright (c) 2013 Salsita Software
  * Licensed under the MIT license.

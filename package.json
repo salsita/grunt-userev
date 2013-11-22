@@ -1,11 +1,11 @@
 {
   "name": "grunt-userev",
-  "version": "0.0.5+2",
+  "version": "0.0.5+3",
   "description": "Update references to assets versioned with grunt-filerev. Leaner and faster than grunt-usemin, and able to update already versioned references.",
   "homepage": "https://github.com/salsita/grunt-userev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/salsita/grunt-userev"
+    "url": "git://github.com/salsita/grunt-userev.git"
   },
   "bugs": "https://github.com/salsita/grunt-userev/issues",
   "author": {
