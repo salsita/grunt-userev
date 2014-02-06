@@ -40,12 +40,18 @@ module.exports = function (grunt) {
 
     if (versioned && path.sep !== sep) {
       var re = new RegExp(reEscape(path.sep), 'g');
-      for (var assetpath in versioned) {
-        versioned[assetpath.replace(re, sep)] = versioned[assetpath].replace(re, sep);
-        delete versioned[assetpath];
+      var toPath, correctedToPath, fromPath, correctedFromPath
+      for (fromPath in versioned) {
+        toPath = versioned[fromPath]
+        correctedToPath = toPath.replace(re, sep);
+        correctedFromPath = fromPath.replace(re, sep)
+        versioned[correctedFromPath] = correctedToPath
+
+        if(fromPath === correctedFromPath) continue
+        delete versioned[fromPath];
       }
     }
-
+    
     grunt.log.debug(this.nameArgs + ': ' + JSON.stringify(this.files, null, 4) +
       JSON.stringify(options, null, 4));
     grunt.log.debug('filerev.summary: ' + JSON.stringify(versioned, null, 4));
