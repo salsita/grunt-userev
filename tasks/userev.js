@@ -78,7 +78,7 @@ module.exports = function (grunt) {
                     grunt.log.writeln('Updating ' + filepath.cyan +
                       (file.dest ? ' -> ' + file.dest.cyan : '.'));
                   }
-                  hashLink = versioned[assetpath].slice(assetpath.length - baseLink.length);
+                  hashLink = versioned[assetpath].slice(assetpath.length - baseLink.length-1);
                   if (lastLink !== hashLink) {
                     grunt.log.writeln('Linking ' + label + ': ' + lastLink +
                       (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' -> ' + hashLink.green);
