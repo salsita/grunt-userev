@@ -62,41 +62,46 @@ module.exports = function (grunt) {
         }).forEach(function(filepath) {
           var content = grunt.file.read(filepath);
           var updated = false;
-          var replacement, lastLink, baseLink, hashLink;
+          var replacement, lastLink, baseLink, hashLink, index;
 
           for (var label in options.patterns) {
+            var match,match_pos;
             var pattern = options.patterns[label];
-            var match = pattern.exec(content);
-            if (match) {
-              grunt.log.debug('Matching ' + [filepath, pattern, JSON.stringify(match)].join(': '));
-              replacement = match[0];
-              lastLink = match[1] || match[0];
-              baseLink = options.hash ? replaceFirstGroup(lastLink, options.hash, '') : lastLink;
-              for (var assetpath in versioned) {
-                if (endsWith(assetpath, baseLink)) {
-                  if (!updated) {
-                    grunt.log.writeln('Updating ' + filepath.cyan +
-                      (file.dest ? ' -> ' + file.dest.cyan : '.'));
-                  }
-                  hashLink = versioned[assetpath].slice(assetpath.length - baseLink.length);
-                  if (lastLink !== hashLink) {
-                    grunt.log.writeln('Linking ' + label + ': ' + lastLink +
-                      (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' -> ' + hashLink.green);
-                    replacement = replacement.replace(lastLink, hashLink);
-                    content = content.replace(pattern, replacement);
-                    updated = true;
+            var matches = content.match(pattern);
+
+            for (index in matches) {
+              var match = matches[index];
+              if (match) {
+                grunt.log.debug('Matching ' + [filepath, pattern, JSON.stringify(match)].join(': '));
+                replacement = match;
+                lastLink = match;
+                baseLink = options.hash ? replaceFirstGroup(lastLink, options.hash, '') : lastLink;
+                for (var assetpath in versioned) {
+                  if (endsWith(assetpath, baseLink)) {
+                    if (!updated) {
+                      grunt.log.writeln('Updating ' + filepath.cyan +
+                        (file.dest ? ' -> ' + file.dest.cyan : '.'));
+                    }
+                    hashLink = versioned[assetpath].slice(assetpath.length - baseLink.length);
+                    if (lastLink !== hashLink) {
+                      grunt.log.writeln('Linking ' + label + ': ' + lastLink +
+                        (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' -> ' + hashLink.green);
+                      replacement = replacement.replace(lastLink, hashLink);
+                      content = content.replace(match, replacement);
+                      updated = true;
+                    } else {
+                      grunt.log.writeln('Already linked ' + label + ': ' +
+                        baseLink + ' -> ' + hashLink.green);
+                    }
+                    break;
                   } else {
-                    grunt.log.writeln('Already linked ' + label + ': ' +
-                      baseLink + ' -> ' + hashLink.green);
+                    grunt.log.debug('No match: ' + lastLink +
+                      (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' <> ' + assetpath);
                   }
-                  break;
-                } else {
-                  grunt.log.debug('No match: ' + lastLink +
-                    (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' <> ' + assetpath);
                 }
+              } else {
+                grunt.log.debug('Not matching ' + filepath + ': ' + pattern);
               }
-            } else {
-              grunt.log.debug('Not matching ' + filepath + ': ' + pattern);
             }
           }
           if (updated) {
