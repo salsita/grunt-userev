@@ -98,8 +98,8 @@ module.exports = function (grunt) {
                       (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' <> ' + assetpath);
                   }
                 }
-                match_pos = content.indexOf(match[0])
-                searchContent = content.substr(match_pos + match[0].length)
+                match_pos = content.indexOf(replacement)
+                searchContent = content.slice(match_pos + match[0].length)
               } else {
                 grunt.log.debug('Not matching ' + filepath + ': ' + pattern);
               }
