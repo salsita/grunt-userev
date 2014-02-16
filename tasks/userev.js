@@ -86,7 +86,7 @@ module.exports = function (grunt) {
                       grunt.log.writeln('Linking ' + label + ': ' + lastLink +
                         (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' -> ' + hashLink.green);
                       replacement = replacement.replace(lastLink, hashLink);
-                      content = content.replace(pattern, replacement);
+                      content = content.replace(match[0], replacement);
                       updated = true;
                     } else {
                       grunt.log.writeln('Already linked ' + label + ': ' +
