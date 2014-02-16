@@ -62,18 +62,19 @@ module.exports = function (grunt) {
         }).forEach(function(filepath) {
           var content = grunt.file.read(filepath);
           var updated = false;
-          var replacement, lastLink, baseLink, hashLink;
+          var replacement, lastLink, baseLink, hashLink, index;
 
           for (var label in options.patterns) {
             var match,match_pos;
             var pattern = options.patterns[label];
-            var searchContent = content
+            var matches = content.match(pattern);
 
-            while ((match = pattern.exec(searchContent)) !== null) {
+            for (index in matches) {
+              var match = matches[index];
               if (match) {
                 grunt.log.debug('Matching ' + [filepath, pattern, JSON.stringify(match)].join(': '));
-                replacement = match[0];
-                lastLink = match[1] || match[0];
+                replacement = match;
+                lastLink = match;
                 baseLink = options.hash ? replaceFirstGroup(lastLink, options.hash, '') : lastLink;
                 for (var assetpath in versioned) {
                   if (endsWith(assetpath, baseLink)) {
@@ -86,7 +87,7 @@ module.exports = function (grunt) {
                       grunt.log.writeln('Linking ' + label + ': ' + lastLink +
                         (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' -> ' + hashLink.green);
                       replacement = replacement.replace(lastLink, hashLink);
-                      content = content.replace(match[0], replacement);
+                      content = content.replace(match, replacement);
                       updated = true;
                     } else {
                       grunt.log.writeln('Already linked ' + label + ': ' +
@@ -98,8 +99,6 @@ module.exports = function (grunt) {
                       (baseLink !== lastLink ? ' -> ' + baseLink : '') + ' <> ' + assetpath);
                   }
                 }
-                match_pos = content.indexOf(replacement)
-                searchContent = content.slice(match_pos + match[0].length)
               } else {
                 grunt.log.debug('Not matching ' + filepath + ': ' + pattern);
               }
